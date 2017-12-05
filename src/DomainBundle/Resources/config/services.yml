@@ -1,0 +1,6 @@
+services:
+  attendee.repository:
+    class: DomainBundle\Repository\AttendeeRepository
+    factory: ["@doctrine.orm.default_entity_manager", getRepository]
+    arguments:
+        - DomainBundle\Entity\Attendee

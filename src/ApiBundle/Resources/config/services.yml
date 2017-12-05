@@ -1,0 +1,5 @@
+services:
+    attendee.service:
+        class: ApiBundle\Services\AttendeeService
+        arguments:
+            - "@attendee.repository"

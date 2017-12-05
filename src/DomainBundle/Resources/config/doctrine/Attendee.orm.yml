@@ -1,0 +1,28 @@
+DomainBundle\Entity\Attendee:
+    type: entity
+    table: null
+    repositoryClass: DomainBundle\Repository\AttendeeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        createdAt:
+            type: datetime
+            nullable: false
+            column: created_at
+        modifiedAt:
+            type: datetime
+            nullable: true
+            column: modified_at
+    lifecycleCallbacks:
+        prePersist: [setCreatedAtValue]
+        preUpdate: [setModifiedAtValue]
